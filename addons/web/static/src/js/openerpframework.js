@@ -1474,9 +1474,16 @@ openerp.datetime_to_str = function(obj) {
     if (!obj) {
         return false;
     }
-    return lpad(obj.getUTCFullYear(),4) + "-" + lpad(obj.getUTCMonth() + 1,2) + "-"
+    /**modified by ys on 2014-8-19
+        注释掉源码。解决server时区差8小时的问题
+     **/
+   /** return lpad(obj.getUTCFullYear(),4) + "-" + lpad(obj.getUTCMonth() + 1,2) + "-"
          + lpad(obj.getUTCDate(),2) + " " + lpad(obj.getUTCHours(),2) + ":"
          + lpad(obj.getUTCMinutes(),2) + ":" + lpad(obj.getUTCSeconds(),2);
+**/
+    return lpad(obj.getYear(),4) + "-" + lpad(obj.getMonth() + 1,2) + "-"
+         + lpad(obj.getDate(),2) + " " + lpad(obj.getHours(),2) + ":"
+         + lpad(obj.getMinutes(),2) + ":" + lpad(obj.getSeconds(),2);
 };
 
 /**
