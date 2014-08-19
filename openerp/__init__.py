@@ -46,6 +46,7 @@ multi_process = False
 # in openerp.cli.server was working.
 import os
 os.environ['TZ'] = 'UTC' # Set the timezone...
+#os.environ['TZ'] = 'Asia/Shanghai'
 import time              # ... *then* import time.
 del os
 del time
